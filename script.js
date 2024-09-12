@@ -1,3 +1,8 @@
+function updateTaskCounter() {
+  const totalTasks = document.querySelectorAll('#toDoLists li').length;
+  document.getElementById('totalTasks').textContent = totalTasks;
+}
+
 document.getElementById('addButton').onclick = function() {
   const input = document.getElementById('toDoInput'); // Получаем текст задачи
   const newTask = input.value; // Сохраняем введенный текст
@@ -17,5 +22,6 @@ document.getElementById('addButton').onclick = function() {
 
       document.getElementById('toDoLists').appendChild(li); // Добавляем задачу в список
       input.value = ''; // Очищаем поле ввода
+      updateTaskCounter();
   }
 };
