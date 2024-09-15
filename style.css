@@ -1,3 +1,4 @@
+/* Основной стиль для страницы */
 body {
   background-color: #35374B;
   color: #FFFFFF;
@@ -10,19 +11,19 @@ body {
   padding: 20px;
 }
 
+/* Контейнер для списка задач */
 #to-do-container {
   width: 400px;
   padding: 20px;
   background-color: #2D2F3B;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,1.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Класс для круглых индикаторов */
 .dot {
-  height:18px;
+  height: 18px;
   width: 18px;
-  display: flex;
-  color: rgb(0, 0, 0);
   display: inline-block;
   background-color: #1E201E;
   border-radius: 50%;
@@ -30,17 +31,30 @@ body {
   box-shadow: 3px 4px 8px #000000;
 }
 
+/* Цвета для индикаторов */
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: rgb(172, 172, 0);
+}
+.red {
+  background-color: rgb(202, 38, 38);
+}
+
+/* Заголовок */
 h1 {
   font-size: 80px;
   text-align: center;
   color: #E85C0D;
-  margin-bottom:75;
-  margin-right:100px;
+  margin-bottom: 75px;
+  margin-right: 100px;
   text-shadow: 5px 4px 10px black;
 }
 
+/* Стиль для поля ввода задачи */
 #toDoInput {
-  width: calc(100%);
+  width: 100%;
   padding: 10px;
   border: none;
   font-size: 18px;
@@ -50,6 +64,7 @@ h1 {
   box-sizing: border-box;
 }
 
+/* Стиль для кнопки добавления задачи */
 #addButton {
   width: 100%;
   background-color: #E85C0D;
@@ -60,20 +75,22 @@ h1 {
   font-size: 16px;
   cursor: pointer;
   color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  transition: backrground-color 0.3s  ;
+  transition: background-color 0.3s ease;
 }
 
+/* Стиль для кнопки при наведении */
 #addButton:hover {
   background-color: #3e8b56;
 }
 
+/* Список задач */
 #toDoLists {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+/* Элементы списка задач */
 #toDoLists li {
   background: #4C6EF5;
   margin-bottom: 10px;
@@ -81,13 +98,13 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px;
   color: #ffffff;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   justify-content: space-between;
   font-size: 18px;
   align-items: center;
 }
 
+/* Стиль кнопки удаления задачи */
 .deleteButton {
   background-color: #F84166;
   color: white;
@@ -97,20 +114,20 @@ h1 {
   cursor: pointer;
 }
 
+/* Стиль кнопки удаления при наведении */
 .deleteButton:hover {
   background-color: #c81616;
 }
-.vertical{
+
+/* Вертикальная линия */
+.vertical {
   border-left: 5px solid rgb(255, 94, 0);
   height: 500px;
   margin-right: 100px;
   box-shadow: 4px 3px 6px black;
 }
-#taskCounter {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-}
+
+/* Контейнер счётчика задач */
 #taskCounter {
   position: absolute;
   bottom: 20px;
@@ -120,7 +137,35 @@ h1 {
   color: #c15b02;
 }
 
+/* Счётчик задач */
 #totalTasks {
   color: #83b600;
-  
+}
+/* Плавное появление и исчезновение задач */
+#toDoLists li {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#toDoLists li.added {
+  opacity: 1;
+}
+
+#toDoLists li.removed {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Эффект наведения на кнопку добавления */
+#addButton:hover {
+  background-color: #FF8C00;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Эффект наведения на кнопку удаления */
+.deleteButton:hover {
+  background-color: #FF6347;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
 }
