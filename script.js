@@ -36,9 +36,10 @@ document.getElementById('addButton').onclick = function() {
   
   // Добавляем обработчик для удаления задачи при нажатии на кнопку
   deleteButton.onclick = function() {
-    // Удаляем задачу (элемент списка)
+    // Добавляем класс для анимации удаления
     li.classList.add('removed');
     setTimeout(function() {
+      // Удаляем задачу (элемент списка)
       li.remove();
       // Обновляем счётчик задач после удаления
       updateTaskCounter();
@@ -57,3 +58,4 @@ document.getElementById('addButton').onclick = function() {
   // Обновляем счётчик задач после добавления новой задачи
   updateTaskCounter();
 };
+

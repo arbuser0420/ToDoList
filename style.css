@@ -30,6 +30,15 @@ body {
   margin-left: 10px;
   box-shadow: 3px 4px 8px #000000;
 }
+.green{
+  background-color: green;
+}
+.yellow{
+  background-color: rgb(172, 172, 0);
+}
+.red{
+  background-color: rgb(202, 38, 38);
+}
 
 /* Цвета для индикаторов */
 .green {
